@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  GOOGLE_CLIENT_ID:'973867362107-90ql9nvkimj38isk1i5av01gj8lt3qjj.apps.googleusercontent.com',
+  GOOGLE_CLIENT_ID:'Your google client id',
   API_ENDPOINT: 'http://localhost:8000/',
   GOOGLE_OAUTH_REDIRECT_URL: 'http://localhost:8000/oauth/google'
 };
