@@ -1,0 +1,32 @@
+<p>delete-user works!</p>
+<div>
+  <div class='panel-heading'>  
+    User List 
+  </div>   
+  <div class='panel-body'>  
+    <div class='table-responsive'>  
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <table class='table' border="1">  
+          <thead>  
+            <tr>  
+              <th>Action</th>
+              <th>User name</th>  
+              <th>Password</th>  
+              <th>Is logged in</th>  
+            </tr>  
+          </thead>  
+          <tbody>  
+            <tr *ngFor="let user of users;">  
+              <td><input type="radio" class="custom-control-input" value="{{user.username}}" formControlName="username"></td>
+              <td>{{user.username}}</td>  
+              <td>{{user.password}}</td>  
+              <td>{{user.loggedIn}}</td>  
+            </tr>  
+          </tbody>  
+        </table>
+        <br>
+        <button type="submit" [disabled]="!userForm.valid">Delete</button>  
+      </form>
+    </div>  
+  </div>
+</div>

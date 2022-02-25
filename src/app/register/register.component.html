@@ -1,0 +1,22 @@
+<p>User sign up</p>
+<br><br>
+<div>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <label for="user-name">User Name: </label>
+    <input id="user-name" type="text" formControlName="username">
+  
+    <label for="password">Password: </label>
+    <input id="password" type="password" formControlName="password">
+  
+    &nbsp;&nbsp;
+    <button type="submit" [disabled]="!userForm.valid">Submit</button>
+  
+  </form>  
+</div>
+<div *ngIf="!userForm.valid"> 
+  <p>Form Status: {{ userForm.status }}</p>
+</div>
+
+
+

@@ -1,0 +1,31 @@
+<p>Login Page</p>
+
+<br><br>
+<div *ngIf="!loginMessage">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <label for="user-name">User Name: </label>
+    <input id="user-name" type="text" formControlName="username">
+  
+    <label for="password">Password: </label>
+    <input id="password" type="password" formControlName="password">
+  
+    &nbsp;&nbsp;
+    <button type="submit" [disabled]="!userForm.valid">Submit</button>
+  
+  </form>  
+</div>
+<div *ngIf="loginMessage">
+  {{loginMessage}}
+</div>
+<div *ngIf="!userForm.valid && !loginMessage"> 
+  <p>Form Status: {{ userForm.status }}</p>
+</div>
+<br><br>
+<!--With Social Identity Providers-->
+<div *ngIf="!loginMessage">
+  Login by Social Identity providers
+  <ul>
+    <li><button type="button" (click)="googleSignIn()">Login with Google</button></li>
+  </ul>
+</div>

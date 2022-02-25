@@ -1,0 +1,20 @@
+<p>Logout Page</p>
+
+<br><br>
+<div *ngIf="!logoutMessage">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <label for="user-name">User Name: </label>
+    <input id="user-name" type="text" formControlName="username">
+  
+    &nbsp;&nbsp;
+    <button type="submit" [disabled]="!userForm.valid">Submit</button>
+  
+  </form>  
+</div>
+<div *ngIf="logoutMessage">
+  {{logoutMessage}}
+</div>
+<div *ngIf="!userForm.valid"> 
+  <p>Form Status: {{ userForm.status }}</p>
+</div>
