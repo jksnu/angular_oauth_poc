@@ -19,8 +19,8 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getHomeDetail() {
-    //return this.http.get(`//localhost:4200/api`, this.httpOptions);
-    return this.http.get(`//localhost:8000/`, this.httpOptions);
+    return this.http.get(`//localhost:4200/api`, this.httpOptions);
+    //return this.http.get(`//localhost:8000/`, this.httpOptions);
   }
   getUsers() {
     return this.http.get(`//localhost:4200/users`, this.httpOptions);
