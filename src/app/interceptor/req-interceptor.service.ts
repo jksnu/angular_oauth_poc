@@ -17,12 +17,20 @@ export class ReqInterceptorService implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('accessToken');
-    request = request.clone({
-      setHeaders: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
-    });
+    if(request.method !== "DELETE") {
+      request = request.clone({
+        setHeaders: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      });
+    } else {
+      request = request.clone({
+        setHeaders: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+    }    
 
     return next.handle(request).pipe( tap(() => {},
       (err: any) => {

@@ -33,9 +33,6 @@ export class UserService {
     return this.http.post(`//localhost:4200/registerUser`, bodyData, this.httpOptions);
   }
   deleteUser(username) {
-    const bodyData = {
-      "username": username
-    }
     return this.http.delete(`//localhost:4200/delete/${username}`, this.httpOptions);
   }
   login(username, password) {

@@ -28,7 +28,7 @@ export class LogoutComponent implements OnInit {
     this.userService.logout(this.userForm.value.username)
     .subscribe(
       res => {
-        this.logoutMessage = res;
+        this.logoutMessage = res["message"];
         console.log(this.logoutMessage);
         localStorage.removeItem('accessToken');
         this.router.navigate(['login']);

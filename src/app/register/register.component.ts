@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
     this.userService.registerUser(this.userForm.value.username, this.userForm.value.password)
     .subscribe(
       res => {
-        alert(res)
+        alert(res["message"])
       },
       err => {
         console.log('HTTP Error', err)

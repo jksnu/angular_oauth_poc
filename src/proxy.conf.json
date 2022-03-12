@@ -40,7 +40,7 @@
     }
   },
   "/logout": {
-    "target": "http://localhost:8000/user/logout/",
+    "target": "http://localhost:8000/user/logout",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": {
